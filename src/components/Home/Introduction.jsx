@@ -26,7 +26,7 @@ const Introduction = ({data, ...props}) => {
           <styles.IntroductionInformation>
             <styles.Title>{displayData?.introduction_title}</styles.Title>
             <styles.IntroductionText><ReactMarkdown source={displayData?.introduction_text}/></styles.IntroductionText>
-            <styles.IntroductionContactButton href="#">Get in touch</styles.IntroductionContactButton>
+            <styles.IntroductionContactButton onClick={() => window.scrollTo({top: document.body.scrollHeight, left: 0, behavior: 'smooth'})}>Get in touch</styles.IntroductionContactButton>
           </styles.IntroductionInformation>
 
           <styles.IntroductionImage>

@@ -84,6 +84,7 @@ export const IntroductionContactButton = styled.a`
   
   display: inline-block;
   border-radius: 5px;
+  cursor: pointer;
 
   background: #49a2de;
   border-bottom: 3px solid #2a81bb;
