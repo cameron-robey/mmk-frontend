@@ -1,14 +1,15 @@
 // Modules
 import React, { useState, useEffect } from 'react';
 import ReactMarkdown from 'react-markdown'
-
 // Contexts
 import { serverPath } from './../api/config';
 import { useAboutUs } from './../contexts/data/AboutUsContext';
 
 // Components
 import NavbarFiller from './../components/Helpers/NavbarFiller';
+import PageTitle from './../components/Helpers/PageTitle';
 
+// Styles
 import * as PageStyles from './styles/PageStyles';
 
 const Homepage = () => {
@@ -26,6 +27,7 @@ const Homepage = () => {
   }, [aboutUs.data]);
 
   if (!displayData || Object.keys(displayData).length === 0) return <>
+    <PageTitle title={'About'} />
     <NavbarFiller />
     <PageStyles.Content />
   </>;
