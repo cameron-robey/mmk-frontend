@@ -6,7 +6,6 @@ import { useHomepage } from '../contexts/data/HomepageContext';
 import { useCustomerTestimonials } from '../contexts/data/CustomerTestimonialsContext';
 import { useOrganisations } from '../contexts/data/OrganisationsContext';
 import { useAwards } from '../contexts/data/AwardsContext';
-import { useContact } from '../contexts/data/ContactContext';
 
 // Components
 import Header from './../components/Home/Header';
@@ -15,20 +14,17 @@ import Achievements from './../components/Home/Achievements';
 import CustomerTestimonials from './../components/Home/CustomerTestimonials';
 import Organisations from './../components/Home/Organisations';
 import Awards from './../components/Home/Awards';
-import Contact from './../components/Home/Contact';
 
 const Homepage = () => {
   const homepage = useHomepage();
   const customerTestimonials = useCustomerTestimonials();
   const organisations = useOrganisations();
   const awards = useAwards();
-  const contact = useContact();
 
   const [displayDataHomepage, setDisplayDataHomepage] = useState(undefined);
   const [displayDataCustomerTestimonials, setDisplayDataCustomerTestimonials] = useState([]);
   const [displayDataOrganisations, setDisplayDataOrganisations] = useState([]);
   const [displayDataAwards, setDisplayDataAwards] = useState([]);
-  const [displayDataContact, setDisplayDataContact] = useState(undefined);
 
   useEffect(() => {
     // Get data on page load
@@ -36,7 +32,6 @@ const Homepage = () => {
     customerTestimonials.getData();
     organisations.getData();
     awards.getData();
-    contact.getData();
   }, []);
 
   useEffect(() => {
@@ -54,10 +49,6 @@ const Homepage = () => {
   useEffect(() => {
     setDisplayDataAwards(awards.data);
   }, [awards.data]);
-
-  useEffect(() => {
-    setDisplayDataContact(contact.data);
-  }, [contact.data]);
 
   if (!displayDataHomepage || !displayDataCustomerTestimonials) return null;
 
@@ -94,11 +85,7 @@ const Homepage = () => {
       organisations_title: displayDataHomepage?.organisations_title,
       organisations: displayDataOrganisations
     }} />
-
-    <Contact data={{
-      contact_title: displayDataHomepage?.contact_title,
-      contact: displayDataContact
-    }} />
+    
   </>
 }
 

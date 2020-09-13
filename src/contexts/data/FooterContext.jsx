@@ -1,13 +1,13 @@
 import React, { useState, useEffect, useContext } from 'react';
 import * as API from '../../api';
 
-const ContactContext = React.createContext({});
+const FooterContext = React.createContext({});
 
-export const useContact = () => useContext(ContactContext);
+export const useFooter = () => useContext(FooterContext);
 
-export const ContactConsumer = ContactContext.Consumer;
+export const FooterConsumer = FooterContext.Consumer;
 
-export const ContactProvider = ({ children }) => {
+export const FooterProvider = ({ children }) => {
   const [ data, setData ] = useState({});
 
   const getData = async (force = false) => {
@@ -16,21 +16,21 @@ export const ContactProvider = ({ children }) => {
       (Object.keys(data).length === 0 && data.constructor === Object)
       || force
     ) {
-      let response = await API.get('/contact');
+      let response = await API.get('/footer');
       setData(response);
     }
   }
 
   return(
-    <ContactContext.Provider
+    <FooterContext.Provider
       value={{
         data,
         getData
       }}
     >
       {children}
-    </ContactContext.Provider>
+    </FooterContext.Provider>
   )
 }
 
-export default ContactContext;
+export default FooterContext;

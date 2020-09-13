@@ -23,7 +23,7 @@ const CustomerTestimonials = ({data, ...props}) => {
 
         <styles.Title>{displayData?.organisations_title}</styles.Title>
 
-        <Marquee velocity={12}>
+        <Marquee velocity={15}>
             {
               displayData.organisations?.map( (o, index) => <>
                 <styles.Image src={serverPath + (o.logo.formats ? o.logo.formats.thumbnail.url : o.logo.url)} />

@@ -21,7 +21,7 @@ export const ContentWrapper = styled.div`
 
 export const Achievements = styled.div`
   display: flex;
-  align-items: center;
+  /* align-items: center; */
   justify-content: center;
   padding-bottom: 10px;
 

@@ -17,7 +17,7 @@ export const IntroductionWrapper = styled.div`
 `;
 
 export const IntroductionInformation = styled.div`
-  width: 70%;
+  width: 100%;
   display: inline-block;
 
   @media (max-width: 900px) {
@@ -28,15 +28,6 @@ export const IntroductionInformation = styled.div`
 
 export const Introduction = styled.div`
   display: flex;
-`;
-
-export const IntroductionImage = styled.div`
-  width: 30%;
-  display: inline-block;
-
-  @media (max-width: 900px) {
-    display: none;
-  }
 `;
 
 export const SectionTitle = styled.p`
@@ -69,9 +60,6 @@ export const IntroductionText = styled.div`
   }
 `;
 
-export const Image = styled.img`
-  width: 100%;
-`;
 
 export const IntroductionContactButton = styled.a`
   margin-top: 20px;

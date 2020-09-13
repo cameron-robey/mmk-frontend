@@ -39,15 +39,16 @@ export const Content = styled.div`
 `;
 
 export const Navigation = styled.div`
-  position: absolute;
   width: 100%;
-  bottom: 10%;
+  
+  padding-top: 30px;
 `;
 
 export const Scroll = styled.p`
   color: #fff;
   cursor: pointer;
   cursor: hand;
+  padding-top: 30px;
 `;
 
 export const Button = styled(Link)`

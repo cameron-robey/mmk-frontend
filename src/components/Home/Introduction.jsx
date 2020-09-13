@@ -28,11 +28,6 @@ const Introduction = ({data, ...props}) => {
             <styles.IntroductionText><ReactMarkdown source={displayData?.introduction_text}/></styles.IntroductionText>
             <styles.IntroductionContactButton onClick={() => window.scrollTo({top: document.body.scrollHeight, left: 0, behavior: 'smooth'})}>Get in touch</styles.IntroductionContactButton>
           </styles.IntroductionInformation>
-
-          <styles.IntroductionImage>
-            <styles.Image src={serverPath + displayData?.introduction_image?.formats.small.url} />
-          </styles.IntroductionImage>
-
         </styles.Introduction>
       </styles.IntroductionWrapper>
     </styles.MainWrapper>

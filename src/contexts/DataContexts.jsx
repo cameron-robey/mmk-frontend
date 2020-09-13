@@ -5,9 +5,9 @@ import { AboutUsProvider } from './data/AboutUsContext';
 import { AwardsProvider } from './data/AwardsContext';
 import { BlogPostsProvider } from './data/BlogPostsContext';
 import { BlogPostSourcesProvider } from './data/BlogPostSourcesContext';
-import { ContactProvider } from './data/ContactContext';
 import { CoursesProvider } from './data/CoursesContext';
 import { CustomerTestimonialsProvider } from './data/CustomerTestimonialsContext';
+import { FooterProvider } from './data/FooterContext';
 import { HomepageProvider } from './data/HomepageContext';
 import { NavbarProvider } from './data/NavbarContext';
 import { OrganisationsProvider } from './data/OrganisationsContext';
@@ -19,9 +19,9 @@ const DataContexts = ({children}) => {
     <AwardsProvider>
       <BlogPostsProvider>
         <BlogPostSourcesProvider>
-          <ContactProvider>
-            <CoursesProvider>
-              <CustomerTestimonialsProvider>
+          <CoursesProvider>
+            <CustomerTestimonialsProvider>
+              <FooterProvider>
                 <HomepageProvider>
                   <NavbarProvider>
                     <OrganisationsProvider>
@@ -29,9 +29,9 @@ const DataContexts = ({children}) => {
                     </OrganisationsProvider>
                   </NavbarProvider>
                 </HomepageProvider>
-              </CustomerTestimonialsProvider>
-            </CoursesProvider>
-          </ContactProvider>
+              </FooterProvider>
+            </CustomerTestimonialsProvider>
+          </CoursesProvider>
         </BlogPostSourcesProvider>
       </BlogPostsProvider>
     </AwardsProvider>
