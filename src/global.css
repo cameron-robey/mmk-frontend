@@ -1,0 +1,26 @@
+/* Global styling */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  font-family: 'Lato', sans-serif;
+}
+
+p {
+  line-height: 1.6;
+}
+
+.slick-prev {
+  left: 0 !important;
+  z-index: 10;
+}
+.slick-next {
+  right: 0 !important;
+  z-index: 10;
+}
