@@ -33,9 +33,22 @@ const Homepage = () => {
   </>;
 
   return <>
+    <PageTitle title={'About'} />
     <NavbarFiller />
 
     <PageStyles.Content>
+      <PageStyles.OverflowWrapper>
+        <PageStyles.SectionTitle>About the Organisation</PageStyles.SectionTitle>
+        <PageStyles.Title>{displayData?.company_subtitle}</PageStyles.Title>
+
+        <PageStyles.TextBlock>
+          <PageStyles.InlineImage left src={serverPath + displayData?.company_image?.formats.small.url}/>
+          <ReactMarkdown source={displayData?.company_text} />
+        </PageStyles.TextBlock>
+      </PageStyles.OverflowWrapper>
+      <PageStyles.Break />
+
+      <PageStyles.OverflowWrapper>
       <PageStyles.SectionTitle>About the Founder</PageStyles.SectionTitle>
       <PageStyles.Title>{displayData?.founder_subtitle}</PageStyles.Title>
 
@@ -43,16 +56,8 @@ const Homepage = () => {
         <PageStyles.InlineImage right src={serverPath + displayData?.founder_image?.formats.small.url}/>
         <ReactMarkdown source={displayData?.founder_text} />
       </PageStyles.TextBlock>
-
-      <PageStyles.Break />
-
-      <PageStyles.SectionTitle>About the Organisation</PageStyles.SectionTitle>
-      <PageStyles.Title>{displayData?.company_subtitle}</PageStyles.Title>
-
-      <PageStyles.TextBlock>
-        <PageStyles.InlineImage left src={serverPath + displayData?.company_image?.formats.small.url}/>
-        <ReactMarkdown source={displayData?.company_text} />
-      </PageStyles.TextBlock>
+      </PageStyles.OverflowWrapper>
+      
     </PageStyles.Content>
     
   </>

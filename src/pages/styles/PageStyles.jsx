@@ -50,7 +50,7 @@ export const InlineImage = styled.img`
     padding-right: 20px;
   ` : ''}
 
-  width: 40%;
+  width: 30%;
   padding-bottom: 20px;
 
   @media (max-width: 900px) {
@@ -64,4 +64,58 @@ export const InlineImage = styled.img`
 export const Break = styled.div`
   height: 50px;
   width: 100%;
+`;
+
+export const OverflowWrapper = styled.div`
+  overflow: hidden;
+`;
+
+export const FlexWrapper = styled.div`
+  display: flex;
+  ${props => props.center ? 'justify-content: center;' : ''}
+
+  @media (max-width: 900px) {
+    ${props => props.reverseMobile ? 'flex-direction: column-reverse;' : 'display: block;'}
+  }
+`;
+
+export const BackgroundWrapper = styled.div`
+  ${props => props.background ? `background-color: ${props.background}` : ''}
+`;
+
+export const FlexDiv = styled.div`
+  width: ${props => props.width};
+
+  ${props => props.padded ? 'padding: 20px;' : ''}
+  
+  @media (max-width: 900px) {
+    width: 100%;
+    ${props => props.noPaddedMobile ? 'padding: 0px;' : ''}
+    padding-bottom: 10px;
+  }
+`;
+
+export const Subheading = styled.p`
+  font-size: 1.2rem;
+  font-weight: 900;
+  color: ${props => props.accent ? '#49a2de' : '#444'};
+  ${props => props.padded ? 'padding: 0 20px;' : ''}
+  padding-top: 20px;
+`;
+
+export const Description = styled.p``;
+
+export const InlineBreak = styled.div`
+  height: 20px;
+  width: 100%;
+`;
+
+export const WideImage = styled.img`
+  width: 100%;
+`;
+
+export const Divider = styled.div`
+  width: 100%;
+  height: 2px;
+  background-color: #aaa;
 `;

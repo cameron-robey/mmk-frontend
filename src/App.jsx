@@ -46,8 +46,7 @@ const App = () => {
         <Footer />
       </Router>
     </DataContexts>
-    );
-  }
+  );
+}
   
-  export default App;
-  
+export default App;
