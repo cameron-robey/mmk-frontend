@@ -161,3 +161,14 @@ export const LogoMobile = styled.div`
 export const LogoMobileImage = styled.img`
   height: 80px;
 `;
+
+export const UnstyledLinkA = styled.a`
+  text-decoration: none;
+
+  transition: padding-left 0.5s ease, border 0.5s ease;
+
+  &:hover {
+    padding-left: 10px;
+    border-left: #49a2de 4px solid;
+  }
+`;
