@@ -11,7 +11,7 @@ import PageTitle from './../components/Helpers/PageTitle';
 // Styles
 import * as PageStyles from './styles/PageStyles';
 
-const About = () => {
+const Courses = () => {
   const courses = useCourses();
 
   const [displayData, setDisplayData] = useState(undefined);
@@ -44,6 +44,7 @@ const About = () => {
           <PageStyles.BackgroundWrapper background={'#d4ebfb'}>
             
             <PageStyles.FlexWrapper>
+
               <PageStyles.FlexDiv width={'30%'}>
                 <PageStyles.PaddingWrapper fullHeight>
                   <PageStyles.BackgroundWrapper fullHeight centerVertical background={'#bfdcf0'}>
@@ -51,18 +52,28 @@ const About = () => {
                   </PageStyles.BackgroundWrapper>
                 </PageStyles.PaddingWrapper>
               </PageStyles.FlexDiv>
+
               <PageStyles.FlexDiv width={'70%'}>
                 <PageStyles.PaddingWrapper>
-                  <PageStyles.Subheading noMarginTop small>Featured {c.type === 'weekly' ? 'Weekly Course' : c.type === 'weeklong' ? 'Weeklong Course' : ''}</PageStyles.Subheading>
+
+                  <PageStyles.Subheading noMarginTop small>
+                    Featured {c.type === 'weekly' ? 'Weekly Course' : c.type === 'weeklong' ? 'Weeklong Course' : ''}
+                  </PageStyles.Subheading>
+
                   <PageStyles.Subheading noMarginTop accent>{c.name}</PageStyles.Subheading>
+
                   <PageStyles.TagGroup>
                     {c.tags.children ? <PageStyles.Tag tagColor={'#58b947'}>Perfect for children</PageStyles.Tag> : null}
                     {c.tags.adults ? <PageStyles.Tag tagColor={'#e82128'}>Perfect for Adults</PageStyles.Tag> : null}
                   </PageStyles.TagGroup>
+
                   <PageStyles.Divider />
+
                   <PageStyles.Description>{c.description}</PageStyles.Description>
+
                 </PageStyles.PaddingWrapper>
               </PageStyles.FlexDiv>
+
             </PageStyles.FlexWrapper>
 
           </PageStyles.BackgroundWrapper>
@@ -70,6 +81,7 @@ const About = () => {
         </> : <>
           <PageStyles.BackgroundWrapper background={'#eee'}>
             <PageStyles.FlexWrapper>
+
               <PageStyles.FlexDiv width={'30%'}>
                   <PageStyles.PaddingWrapper fullHeight>
                     <PageStyles.BackgroundWrapper fullHeight centerVertical background={'#ddd'}>
@@ -77,6 +89,7 @@ const About = () => {
                     </PageStyles.BackgroundWrapper>
                   </PageStyles.PaddingWrapper>
               </PageStyles.FlexDiv>
+
               <PageStyles.FlexDiv width={'70%'}>
                 <PageStyles.PaddingWrapper>
 
@@ -97,6 +110,7 @@ const About = () => {
 
                 </PageStyles.PaddingWrapper>
               </PageStyles.FlexDiv>
+              
             </PageStyles.FlexWrapper>
 
           </PageStyles.BackgroundWrapper>
@@ -110,4 +124,4 @@ const About = () => {
   </>
 }
 
-export default About;
+export default Courses;
