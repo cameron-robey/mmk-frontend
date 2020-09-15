@@ -40,13 +40,13 @@ const About = () => {
   }, [footer.data]);
 
   if (!displayData || Object.keys(displayData).length === 0) return <>
-    <PageTitle title={'About'} />
+    <PageTitle title={'Organisations'} />
     <NavbarFiller />
     <PageStyles.Content />
   </>;
 
   return <>
-    <PageTitle title={'About'} />
+    <PageTitle title={'Organisations'} />
     <NavbarFiller />
     
     <PageStyles.Content>
