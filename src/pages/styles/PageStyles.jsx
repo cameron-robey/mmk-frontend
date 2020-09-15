@@ -101,7 +101,21 @@ export const FlexWrapper = styled.div`
 `;
 
 export const BackgroundWrapper = styled.div`
-  ${props => props.background ? `background-color: ${props.background}` : ''}
+  ${props => props.background ? `background-color: ${props.background};` : ''}
+
+  ${props => props.fullHeight ? 'height: 100%;' : ''}
+
+  ${props => props.centerVertical ? `
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  ` : ''}
+`;
+
+export const PaddingWrapper = styled.div`
+  padding: ${props => props.value ? props.value : '20px'};
+
+  ${props => props.fullHeight ? 'height: 100%;' : ''}
 `;
 
 export const FlexDiv = styled.div`
@@ -121,7 +135,7 @@ export const Subheading = styled.p`
   font-weight: 900;
   color: ${props => props.accent ? '#49a2de' : '#444'};
   ${props => props.padded ? 'padding: 0 20px;' : ''}
-  padding-top: ${props => (props.small || props.noMarginTop) ? '' : '20px'};;
+  padding-top: ${props => (props.noMarginTop) ? '' : '20px'};;
 `;
 
 export const Description = styled.p``;
@@ -133,6 +147,10 @@ export const InlineBreak = styled.div`
 
 export const WideImage = styled.img`
   width: 100%;
+
+  ${props => props.padded ? `
+    padding: ${props.padded};
+  ` : ''}
 `;
 
 export const Divider = styled.div`
@@ -171,4 +189,38 @@ export const AspectRatioContainer = styled.div`
 
   background-image: url(${props => props.url});
   background-size: cover;
+`;
+
+export const Tag = styled.div`
+  display: inline-block;
+  background: ${props => props.tagColor};
+  padding: 5px 10px;
+  margin: 10px;
+  border-radius: 5px;
+  font-weight: 700;
+  color: #fff;
+  &:first-child {
+    margin-left: 0;
+  }
+
+  @media (max-width: 900px) {
+    margin: 5px;
+    display: inline-block;
+
+    &:first-child {
+      margin-left: 0;
+    }
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+`;
+
+export const TagGroup = styled.div`
+  
+`;
+
+export const FullHeight = styled.div`
+  height: 100%;
 `;

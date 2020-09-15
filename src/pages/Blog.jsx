@@ -28,13 +28,13 @@ const Blog = () => {
   }, [blog.data]);
 
   if (!displayData.length && Object.keys(displayData).length === 0) return <>
-    <PageTitle title={'About'} />
+    <PageTitle title={'Blog'} />
     <NavbarFiller />
     <PageStyles.Content />
   </>;
 
   return <>
-    <PageTitle title={'About'} />
+    <PageTitle title={'Blog'} />
     <NavbarFiller />
 
     <PageStyles.Content>
