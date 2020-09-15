@@ -53,7 +53,7 @@ const About = () => {
               </PageStyles.FlexDiv>
               <PageStyles.FlexDiv width={'70%'}>
                 <PageStyles.PaddingWrapper>
-                  <PageStyles.Subheading noMarginTop small>Featured course</PageStyles.Subheading>
+                  <PageStyles.Subheading noMarginTop small>Featured {c.type === 'weekly' ? 'Weekly Course' : c.type === 'weeklong' ? 'Weeklong Course' : ''}</PageStyles.Subheading>
                   <PageStyles.Subheading noMarginTop accent>{c.name}</PageStyles.Subheading>
                   <PageStyles.TagGroup>
                     {c.tags.children ? <PageStyles.Tag tagColor={'#58b947'}>Perfect for children</PageStyles.Tag> : null}
@@ -79,13 +79,22 @@ const About = () => {
               </PageStyles.FlexDiv>
               <PageStyles.FlexDiv width={'70%'}>
                 <PageStyles.PaddingWrapper>
+
+                  <PageStyles.Subheading noMarginTop small>
+                    {c.type === 'weekly' ? 'Weekly Course' : c.type === 'weeklong' ? 'Weeklong Course' : ''}
+                  </PageStyles.Subheading>
+
                   <PageStyles.Subheading noMarginTop accent>{c.name}</PageStyles.Subheading>
+
                   <PageStyles.TagGroup>
                     {c.tags.children ? <PageStyles.Tag tagColor={'#58b947'}>Perfect for children</PageStyles.Tag> : null}
                     {c.tags.adults ? <PageStyles.Tag tagColor={'#e82128'}>Perfect for Adults</PageStyles.Tag> : null}
                   </PageStyles.TagGroup>
+
                   <PageStyles.Divider />
+
                   <PageStyles.Description>{c.description}</PageStyles.Description>
+
                 </PageStyles.PaddingWrapper>
               </PageStyles.FlexDiv>
             </PageStyles.FlexWrapper>
