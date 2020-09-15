@@ -17,6 +17,7 @@ import Blog from './pages/Blog';
 import Navbar from './components/Navbar/Navbar';
 import Footer from './components/Footer/Footer';
 import Content404 from './components/404/Content404';
+import PageTitle from './components/Helpers/PageTitle';
 
 // API
 import * as API from './api';
@@ -30,6 +31,7 @@ const App = () => {
     <DataContexts>
       <Router>
         <>
+          <PageTitle title={''} />
           <Route path="/" render={() => { window.scroll({top: 0, left: 0}); return null; }} />
           <Navbar />
           <Switch>

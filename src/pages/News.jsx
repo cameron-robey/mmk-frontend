@@ -28,7 +28,7 @@ const About = () => {
   }, [news.data]);
 
   if (!displayData || Object.keys(displayData).length === 0) return <>
-    <PageTitle title={'About'} />
+    <PageTitle title={'News'} />
     <NavbarFiller />
     <PageStyles.Content />
   </>;
