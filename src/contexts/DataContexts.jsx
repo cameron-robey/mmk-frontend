@@ -10,6 +10,7 @@ import { CustomerTestimonialsProvider } from './data/CustomerTestimonialsContext
 import { FooterProvider } from './data/FooterContext';
 import { HomepageProvider } from './data/HomepageContext';
 import { NavbarProvider } from './data/NavbarContext';
+import { NewsProvider } from './data/NewsContext';
 import { OrganisationsProvider } from './data/OrganisationsContext';
 import { VideosProvider } from './data/VideosContext';
 
@@ -24,11 +25,13 @@ const DataContexts = ({children}) => {
               <FooterProvider>
                 <HomepageProvider>
                   <NavbarProvider>
-                    <OrganisationsProvider>
-                      <VideosProvider>
-                        {children}
-                      </VideosProvider>
-                    </OrganisationsProvider>
+                    <NewsProvider>
+                      <OrganisationsProvider>
+                        <VideosProvider>
+                          {children}
+                        </VideosProvider>
+                      </OrganisationsProvider>
+                    </NewsProvider>
                   </NavbarProvider>
                 </HomepageProvider>
               </FooterProvider>

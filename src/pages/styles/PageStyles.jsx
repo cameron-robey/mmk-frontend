@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 export const Content = styled.div`
   min-height: calc(100vh - 51px);
@@ -30,8 +31,8 @@ export const Title = styled.h1`
   margin-bottom: 20px;
   font-weight: 900;
 
-  padding-bottom: 10px;
-  border-bottom: 2px solid #aaa;
+  padding-bottom: ${props => props.noUnderline ? '' : '10px'};
+  border-bottom: ${props => props.noUnderline ? '' : '2px solid #aaa'};
 `;
 
 export const TextBlock = styled.div`
@@ -151,6 +152,22 @@ export const WideImage = styled.img`
   ${props => props.padded ? `
     padding: ${props.padded};
   ` : ''}
+`;
+
+export const FloatingImage = styled.img`
+  max-height: 400px;
+  max-width: 100%;
+  margin: auto;
+  padding: 15px;
+`;
+
+export const TextAlignCenterWrapper = styled.div`
+  text-align: center;
+`;
+
+export const UnstyledLink = styled(Link)`
+  text-decoration: none;
+  color: inherit;
 `;
 
 export const Divider = styled.div`

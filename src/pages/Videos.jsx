@@ -58,8 +58,12 @@ const Videos = () => {
           </PageStyles.FlexDiv>
         </PageStyles.FlexWrapper>
 
-        <PageStyles.InlineBreak />
+        
 
+        {c.videos.length > 0 ? <>
+
+        <PageStyles.InlineBreak />
+        
         <PageStyles.BackgroundWrapper background={'#eee'}>
           <PageStyles.Subheading accent padded>More Videos</PageStyles.Subheading>
           <PageStyles.FlexWrapper>
@@ -73,6 +77,9 @@ const Videos = () => {
             
           </PageStyles.FlexWrapper>
         </PageStyles.BackgroundWrapper>
+        
+        </>: null}
+        
 
         <PageStyles.Break />
         {(index + 1 === c.videos.length) ? null : <><PageStyles.Divider /><PageStyles.Break /></>}
