@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 export const Content = styled.div`
   min-height: calc(100vh - 51px);
@@ -38,6 +39,15 @@ export const Title = styled.h1`
 export const TextBlock = styled.div`
   & > * {
     margin: 10px 0;
+  }
+
+  & > ol {
+    list-style-position: inside;
+  }
+  & > ol > li:before {
+    content: "";
+    display: inline-block;
+    width: 10px;
   }
 `;
 
@@ -111,6 +121,10 @@ export const BackgroundWrapper = styled.div`
     align-items: center;
     justify-content: center;
   ` : ''}
+
+  ${props => props.animated ? `
+    transition: background 0.5s ease;
+  ` : ''}
 `;
 
 export const PaddingWrapper = styled.div`
@@ -132,7 +146,7 @@ export const FlexDiv = styled.div`
 `;
 
 export const Subheading = styled.p`
-  font-size: ${props => props.small ? '1rem' : '1.2rem'};
+  font-size: ${props => props.small ? '1rem' : props.large ? '1.6rem' : '1.2rem'};
   font-weight: 900;
   color: ${props => props.accent ? '#49a2de' : '#444'};
   ${props => props.padded ? 'padding: 0 20px;' : ''}
@@ -168,6 +182,10 @@ export const TextAlignCenterWrapper = styled.div`
 export const UnstyledLink = styled(Link)`
   text-decoration: none;
   color: inherit;
+`;
+
+export const UnstyledLinkA = styled.a`
+  text-decoration: none;
 `;
 
 export const Divider = styled.div`
@@ -240,4 +258,30 @@ export const TagGroup = styled.div`
 
 export const FullHeight = styled.div`
   height: 100%;
+`;
+
+export const LargeIcon = styled(FontAwesomeIcon)`
+  font-size: 2rem;
+  margin: 5px 0;
+  color: #49a2de;
+`;
+
+export const CursorWrapper = styled.div`
+  cursor: pointer;
+`;
+
+export const ContactBlock = styled.p`
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #444;
+
+  & > svg {
+    margin-right: 10px;
+  }
+
+  & > span {
+    font-weight: 400;
+    color: #000;
+  }
+
 `;

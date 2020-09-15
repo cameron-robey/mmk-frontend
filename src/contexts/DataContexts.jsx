@@ -11,6 +11,7 @@ import { FooterProvider } from './data/FooterContext';
 import { HomepageProvider } from './data/HomepageContext';
 import { NavbarProvider } from './data/NavbarContext';
 import { NewsProvider } from './data/NewsContext';
+import { OrganisationsPageProvider } from './data/OrganisationsPageContext';
 import { OrganisationsProvider } from './data/OrganisationsContext';
 import { VideosProvider } from './data/VideosContext';
 
@@ -26,11 +27,13 @@ const DataContexts = ({children}) => {
                 <HomepageProvider>
                   <NavbarProvider>
                     <NewsProvider>
-                      <OrganisationsProvider>
-                        <VideosProvider>
-                          {children}
-                        </VideosProvider>
-                      </OrganisationsProvider>
+                      <OrganisationsPageProvider>
+                        <OrganisationsProvider>
+                          <VideosProvider>
+                            {children}
+                          </VideosProvider>
+                        </OrganisationsProvider>
+                      </OrganisationsPageProvider>
                     </NewsProvider>
                   </NavbarProvider>
                 </HomepageProvider>

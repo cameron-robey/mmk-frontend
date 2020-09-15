@@ -1,13 +1,13 @@
 import React, { useState, useEffect, useContext } from 'react';
 import * as API from '../../api';
 
-const NewsContext = React.createContext({});
+const OrganisationsPageContext = React.createContext({});
 
-export const useNews = () => useContext(NewsContext);
+export const useOrganisationsPage = () => useContext(OrganisationsPageContext);
 
-export const NewsConsumer = NewsContext.Consumer;
+export const OrganisationsPageConsumer = OrganisationsPageContext.Consumer;
 
-export const NewsProvider = ({ children }) => {
+export const OrganisationsPageProvider = ({ children }) => {
   const [ data, setData ] = useState({});
 
   const getData = async (force = false) => {
@@ -16,21 +16,21 @@ export const NewsProvider = ({ children }) => {
       (Object.keys(data).length === 0 && data.constructor === Object)
       || force
     ) {
-      let response = await API.get('/internal-news');
+      let response = await API.get('/organisations-page');
       setData(response);
     }
   }
 
   return(
-    <NewsContext.Provider
+    <OrganisationsPageContext.Provider
       value={{
         data,
         getData
       }}
     >
       {children}
-    </NewsContext.Provider>
+    </OrganisationsPageContext.Provider>
   )
 }
 
-export default NewsContext;
+export default OrganisationsPageContext;
