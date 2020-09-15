@@ -230,7 +230,8 @@ export const Tag = styled.div`
   display: inline-block;
   background: ${props => props.tagColor};
   padding: 5px 10px;
-  margin: 10px;
+  margin: 10px 0px;
+  margin-right: 10px;
   border-radius: 5px;
   font-weight: 700;
   color: #fff;
@@ -239,15 +240,8 @@ export const Tag = styled.div`
   }
 
   @media (max-width: 900px) {
-    margin: 5px;
-    display: inline-block;
-
-    &:first-child {
-      margin-left: 0;
-    }
-    &:last-child {
-      margin-right: 0;
-    }
+    margin: 5px 0px;
+    margin-right: 10px;
   }
 
 `;
