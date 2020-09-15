@@ -8882,6 +8882,11 @@ react-app-polyfill@^1.0.6:
     regenerator-runtime "^0.13.3"
     whatwg-fetch "^3.0.0"
 
+react-aspect-ratio@^1.0.42:
+  version "1.0.42"
+  resolved "https://registry.yarnpkg.com/react-aspect-ratio/-/react-aspect-ratio-1.0.42.tgz#04bf3e4d11c484bc5638ef5b22b84fb428ebc809"
+  integrity sha512-TlDS7GZ6Fot6yMo1OYWrcxI/cggGsU4xsfXLastv6FfcZq0e99LeMq+OUbrlEjtOzi00QzNvkoj5T2vDqJNAmw==
+
 react-countup@^4.3.3:
   version "4.3.3"
   resolved "https://registry.yarnpkg.com/react-countup/-/react-countup-4.3.3.tgz#143a8d854d47290b73d6915eac20a12d839153c2"

@@ -3,7 +3,7 @@ import React from 'react';
 // Contexts
 import { AboutUsProvider } from './data/AboutUsContext';
 import { AwardsProvider } from './data/AwardsContext';
-import { BlogPostsProvider } from './data/BlogPostsContext';
+import { BlogProvider } from './data/BlogContext';
 import { BlogPostSourcesProvider } from './data/BlogPostSourcesContext';
 import { CoursesProvider } from './data/CoursesContext';
 import { CustomerTestimonialsProvider } from './data/CustomerTestimonialsContext';
@@ -17,7 +17,7 @@ const DataContexts = ({children}) => {
   return <>
   <AboutUsProvider>
     <AwardsProvider>
-      <BlogPostsProvider>
+      <BlogProvider>
         <BlogPostSourcesProvider>
           <CoursesProvider>
             <CustomerTestimonialsProvider>
@@ -35,7 +35,7 @@ const DataContexts = ({children}) => {
             </CustomerTestimonialsProvider>
           </CoursesProvider>
         </BlogPostSourcesProvider>
-      </BlogPostsProvider>
+      </BlogProvider>
     </AwardsProvider>
   </AboutUsProvider>
   </>

@@ -12,7 +12,7 @@ import PageTitle from './../components/Helpers/PageTitle';
 // Styles
 import * as PageStyles from './styles/PageStyles';
 
-const Homepage = () => {
+const About = () => {
   const aboutUs = useAboutUs();
 
   const [displayData, setDisplayData] = useState(undefined);
@@ -63,4 +63,4 @@ const Homepage = () => {
   </>
 }
 
-export default Homepage;
+export default About;

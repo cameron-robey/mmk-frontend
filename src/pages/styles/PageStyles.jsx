@@ -40,6 +40,27 @@ export const TextBlock = styled.div`
   }
 `;
 
+export const InlineBlockWrapper = styled.div`
+    ${props => props.right ? `
+    float: right;
+    padding-left: 20px;
+  ` : ''}
+  ${props => props.left ? `
+    float: left;
+    padding-right: 20px;
+  ` : ''}
+
+  width: 30%;
+  padding-bottom: 20px;
+
+  @media (max-width: 900px) {
+    width: 100%;
+    padding-left: 0;
+    padding-right: 0;
+    padding-bottom: 10px;
+  }
+`;
+
 export const InlineImage = styled.img`
   ${props => props.right ? `
     float: right;
@@ -96,11 +117,11 @@ export const FlexDiv = styled.div`
 `;
 
 export const Subheading = styled.p`
-  font-size: 1.2rem;
+  font-size: ${props => props.small ? '1rem' : '1.2rem'};
   font-weight: 900;
   color: ${props => props.accent ? '#49a2de' : '#444'};
   ${props => props.padded ? 'padding: 0 20px;' : ''}
-  padding-top: 20px;
+  padding-top: ${props => (props.small || props.noMarginTop) ? '' : '20px'};;
 `;
 
 export const Description = styled.p``;
@@ -118,4 +139,36 @@ export const Divider = styled.div`
   width: 100%;
   height: 2px;
   background-color: #aaa;
+`;
+
+export const AccentButton = styled.a`
+margin-top: 20px;
+padding: 10px;
+
+text-decoration: none;
+color: #fff;
+font-size: 1.1rem;
+font-weight: 700;
+
+display: inline-block;
+border-radius: 5px;
+cursor: pointer;
+
+background: #49a2de;
+border-bottom: 3px solid #2a81bb;
+box-shadow: 0px 3px 3px rgba(73,73,73,0.20);
+
+&:hover {
+      box-shadow: 0px 3px 7px rgba(73,73,73,0.4);
+      transform: translateY(-1px);
+  }
+`;
+
+export const AspectRatioContainer = styled.div`
+  height: 0px;
+  width: 100%;
+  padding-top: calc(100% * ${props => props.ratio});
+
+  background-image: url(${props => props.url});
+  background-size: cover;
 `;

@@ -1,13 +1,13 @@
 import React, { useState, useEffect, useContext } from 'react';
 import * as API from '../../api';
 
-const BlogPostsContext = React.createContext({});
+const BlogContext = React.createContext({});
 
-export const useBlogPosts = () => useContext(BlogPostsContext);
+export const useBlog = () => useContext(BlogContext);
 
-export const BlogPostsConsumer = BlogPostsContext.Consumer;
+export const BlogConsumer = BlogContext.Consumer;
 
-export const BlogPostsProvider = ({ children }) => {
+export const BlogProvider = ({ children }) => {
   const [ data, setData ] = useState({});
 
   const getData = async (force = false) => {
@@ -16,21 +16,21 @@ export const BlogPostsProvider = ({ children }) => {
       (Object.keys(data).length === 0 && data.constructor === Object)
       || force
     ) {
-      let response = await API.get('/blog-posts');
+      let response = await API.get('/blog');
       setData(response);
     }
   }
 
   return(
-    <BlogPostsContext.Provider
+    <BlogContext.Provider
       value={{
         data,
         getData
       }}
     >
       {children}
-    </BlogPostsContext.Provider>
+    </BlogContext.Provider>
   )
 }
 
-export default BlogPostsContext;
+export default BlogContext;
