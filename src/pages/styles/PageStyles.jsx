@@ -93,9 +93,46 @@ export const InlineImage = styled.img`
   }
 `;
 
+export const HideMobileWrapper = styled.div`
+  display: block;
+  
+  @media (max-width: 900px) {
+    display: none;
+  }
+`;
+
+export const MobileOnlyWrapper = styled.div`
+  display: none;
+  
+  @media (max-width: 900px) {
+    display: block;
+  }
+`;
+
 export const Break = styled.div`
   height: 50px;
   width: 100%;
+
+  ${props => props.mobileOnly ? 'display: none;' : ''}
+  ${props => props.hideMobile ? 'display: block;' : ''}
+  
+  @media (max-width: 900px) {
+    ${props => props.mobileOnly ? 'display: block;' : ''}
+    ${props => props.hideMobile ? 'display: none;' : ''}
+  }
+`;
+
+export const InlineBreak = styled.div`
+  height: 20px;
+  width: 100%;
+
+  ${props => props.mobileOnly ? 'display: none;' : ''}
+  ${props => props.mobileOnly ? 'display: none;' : ''}
+  
+  @media (max-width: 900px) {
+    ${props => props.mobileOnly ? 'display: block;' : ''}
+    ${props => props.hideMobile ? 'display: none;' : ''}
+  }
 `;
 
 export const OverflowWrapper = styled.div`
@@ -106,6 +143,8 @@ export const OverflowWrapper = styled.div`
 
 export const FlexWrapper = styled.div`
   display: flex;
+  flex-wrap: wrap;
+
   ${props => props.center ? 'justify-content: center;' : ''}
 
   @media (max-width: 900px) {
@@ -137,7 +176,7 @@ export const PaddingWrapper = styled.div`
 
 export const FlexDiv = styled.div`
   width: ${props => props.width};
-
+  
   ${props => props.padded ? 'padding: 20px;' : ''}
   
   @media (max-width: 900px) {
@@ -148,18 +187,22 @@ export const FlexDiv = styled.div`
 `;
 
 export const Subheading = styled.p`
-  font-size: ${props => props.small ? '1rem' : props.large ? '1.6rem' : '1.2rem'};
+  font-size: ${props => props.small ? '1rem' : props.large ? '1.6rem' : props.tiny ? '0.9rem' : '1.2rem'};
   font-weight: 900;
   color: ${props => props.accent ? '#49a2de' : '#444'};
   ${props => props.padded ? 'padding: 0 20px;' : ''}
   padding-top: ${props => (props.noMarginTop) ? '' : '20px'};;
 `;
 
-export const Description = styled.p``;
+export const Description = styled.p`
+  text-decoration: none;
+  color: #000;
 
-export const InlineBreak = styled.div`
-  height: 20px;
-  width: 100%;
+  ${props => props.mobileOnly ? 'display: none;' : ''}
+  
+  @media (max-width: 900px) {
+    ${props => props.mobileOnly ? 'display: block;' : ''}
+  }
 `;
 
 export const WideImage = styled.img`
