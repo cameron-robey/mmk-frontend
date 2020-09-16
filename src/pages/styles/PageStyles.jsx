@@ -262,6 +262,29 @@ box-shadow: 0px 3px 3px rgba(73,73,73,0.20);
   }
 `;
 
+export const AccentButtonLink = styled(Link)`
+margin-top: 20px;
+padding: 10px;
+
+text-decoration: none;
+color: #fff;
+font-size: 1.1rem;
+font-weight: 700;
+
+display: inline-block;
+border-radius: 5px;
+cursor: pointer;
+
+background: #49a2de;
+border-bottom: 3px solid #2a81bb;
+box-shadow: 0px 3px 3px rgba(73,73,73,0.20);
+
+&:hover {
+      box-shadow: 0px 3px 7px rgba(73,73,73,0.4);
+      transform: translateY(-1px);
+  }
+`;
+
 export const AspectRatioContainer = styled.div`
   height: 0px;
   width: 100%;

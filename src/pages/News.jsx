@@ -45,13 +45,13 @@ const SmallArticle = ({data, ...props}) => {
           <PageStyles.InlineBreak />
           <PageStyles.Subheading tiny noMarginTop>{data.date}</PageStyles.Subheading>
           <PageStyles.Subheading small accent noMarginTop>{data.title}</PageStyles.Subheading>
+        </PageStyles.UnstyledLink>
           <PageStyles.MobileOnlyWrapper>
             <PageStyles.Description>
               {data.content.substring(0,200).split(' ').slice(0, -1).join(' ')}...
             </PageStyles.Description>
-            <PageStyles.AccentButton href={data.url} target="_blank">Read more</PageStyles.AccentButton>      
+            <PageStyles.AccentButtonLink to={`/news/${data.id}/${data.title.replace(/[^\w\s]/gi, '').toLowerCase().replace(/\s/g,'-')}`}>Read more</PageStyles.AccentButtonLink>      
           </PageStyles.MobileOnlyWrapper>
-        </PageStyles.UnstyledLink>
       </PageStyles.PaddingWrapper>
     </PageStyles.FlexDiv>
   </>
