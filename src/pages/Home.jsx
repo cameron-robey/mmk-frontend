@@ -6,6 +6,7 @@ import { useHomepage } from '../contexts/data/HomepageContext';
 import { useCustomerTestimonials } from '../contexts/data/CustomerTestimonialsContext';
 import { useOrganisations } from '../contexts/data/OrganisationsContext';
 import { useAwards } from '../contexts/data/AwardsContext';
+import { useNews } from '../contexts/data/NewsContext';
 
 // Components
 import Header from './../components/Home/Header';
@@ -20,11 +21,13 @@ const Homepage = () => {
   const customerTestimonials = useCustomerTestimonials();
   const organisations = useOrganisations();
   const awards = useAwards();
+  const news = useNews();
 
   const [displayDataHomepage, setDisplayDataHomepage] = useState(undefined);
   const [displayDataCustomerTestimonials, setDisplayDataCustomerTestimonials] = useState([]);
   const [displayDataOrganisations, setDisplayDataOrganisations] = useState([]);
   const [displayDataAwards, setDisplayDataAwards] = useState([]);
+  const [displayDataNews, setDisplayDataNews] = useState({});
 
   useEffect(() => {
     // Get data on page load
@@ -32,6 +35,7 @@ const Homepage = () => {
     customerTestimonials.getData();
     organisations.getData();
     awards.getData();
+    news.getData();
   }, []);
 
   useEffect(() => {
@@ -50,6 +54,10 @@ const Homepage = () => {
     setDisplayDataAwards(awards.data);
   }, [awards.data]);
 
+  useEffect(() => {
+    setDisplayDataNews(news.data);
+  }, [news.data]);
+
   if (!displayDataHomepage || !displayDataCustomerTestimonials) return null;
 
   return <>
@@ -63,7 +71,8 @@ const Homepage = () => {
     <Introduction data={{
       introduction_title: displayDataHomepage?.introduction_title,
       introduction_text: displayDataHomepage?.introduction_text,
-      introduction_image: displayDataHomepage?.introduction_image
+      introduction_image: displayDataHomepage?.introduction_image,
+      news: displayDataNews?.news
     }} />
 
     <Achievements data={{

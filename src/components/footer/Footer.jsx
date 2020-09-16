@@ -46,17 +46,17 @@ const Footer = ({data, ...props}) => {
             <styles.Title>{displayData?.contact?.title}</styles.Title>
 
             <styles.FooterItem>
-              <styles.UnstyledLinkA href={`mailto:${displayData?.contact?.email}`}>
+              <styles.ExternalLink href={`mailto:${displayData?.contact?.email}`}>
                 <styles.Type><FontAwesomeIcon icon={ faEnvelope } />&nbsp;&nbsp;Email</styles.Type>
                 <styles.Value>{displayData?.contact?.email}</styles.Value>
-              </styles.UnstyledLinkA>
+              </styles.ExternalLink>
             </styles.FooterItem>
             
             <styles.FooterItem>
-              <styles.UnstyledLinkA href={`tel:${displayData?.contact?.phone.split(' ').join('')}`}>
+              <styles.ExternalLink href={`tel:${displayData?.contact?.phone.split(' ').join('')}`}>
                 <styles.Type><FontAwesomeIcon icon={ faPhone } />&nbsp;&nbsp;Phone</styles.Type>
                 <styles.Value>{displayData?.contact?.phone}</styles.Value>
-              </styles.UnstyledLinkA>
+              </styles.ExternalLink>
             </styles.FooterItem>
 
             <styles.FooterItem>
