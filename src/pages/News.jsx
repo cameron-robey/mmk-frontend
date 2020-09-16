@@ -13,7 +13,51 @@ import PageTitle from './../components/Helpers/PageTitle';
 // Styles
 import * as PageStyles from './styles/PageStyles';
 
-const About = () => {
+const FeatureArticle = ({data, ...props}) => {
+  return <>
+    <PageStyles.OverflowWrapper>
+      <PageStyles.UnstyledLink to={`/news/${data.id}/${data.title.replace(/[^\w\s]/gi, '').toLowerCase().replace(/\s/g,'-')}`}>
+      <PageStyles.Subheading accent small noMarginTop>Published on {data.date}</PageStyles.Subheading>
+      <PageStyles.Title noUnderline>{data.title}</PageStyles.Title>
+      <PageStyles.BackgroundWrapper background={'#eee'}>
+        <PageStyles.TextAlignCenterWrapper>
+          <PageStyles.FloatingImage right src={serverPath + data.cover.url}/>
+        </PageStyles.TextAlignCenterWrapper>
+      </PageStyles.BackgroundWrapper>
+      </PageStyles.UnstyledLink>
+      <PageStyles.TextBlock>
+        <ReactMarkdown source={data.content} />
+      </PageStyles.TextBlock>
+    </PageStyles.OverflowWrapper>
+  </>
+}
+
+const SmallArticle = ({data, ...props}) => {
+  return <>
+    <PageStyles.FlexDiv width={'25%'}>
+      <PageStyles.PaddingWrapper value={'5px'}>
+        <PageStyles.UnstyledLink to={`/news/${data.id}/${data.title.replace(/[^\w\s]/gi, '').toLowerCase().replace(/\s/g,'-')}`}>
+          <PageStyles.BackgroundWrapper background={'#eee'} >
+            <PageStyles.PaddingWrapper value={'5px'}>
+              <PageStyles.AspectRatioContainer ratio="0.66" contain url={serverPath + (data.cover.url)}/>
+            </PageStyles.PaddingWrapper>
+          </PageStyles.BackgroundWrapper>
+          <PageStyles.InlineBreak />
+          <PageStyles.Subheading tiny noMarginTop>{data.date}</PageStyles.Subheading>
+          <PageStyles.Subheading small accent noMarginTop>{data.title}</PageStyles.Subheading>
+          <PageStyles.MobileOnlyWrapper>
+            <PageStyles.Description>
+              {data.content.substring(0,200).split(' ').slice(0, -1).join(' ')}...
+            </PageStyles.Description>
+            <PageStyles.AccentButton href={data.url} target="_blank">Read more</PageStyles.AccentButton>      
+          </PageStyles.MobileOnlyWrapper>
+        </PageStyles.UnstyledLink>
+      </PageStyles.PaddingWrapper>
+    </PageStyles.FlexDiv>
+  </>
+}
+
+const News = () => {
   const news = useNews();
 
   const [displayData, setDisplayData] = useState(undefined);
@@ -42,23 +86,25 @@ const About = () => {
         <PageStyles.SectionTitle>Blog</PageStyles.SectionTitle>
         <PageStyles.Title>{displayData?.title}</PageStyles.Title>
 
-        {displayData?.news.map( (n,index) => <React.Fragment key={index}>
-          <PageStyles.InlineBreak />
-          <PageStyles.OverflowWrapper>
-            <PageStyles.Subheading accent small noMarginTop>Published on {n.date}</PageStyles.Subheading>
-            <PageStyles.Title noUnderline>{n.title}</PageStyles.Title>
-            <PageStyles.BackgroundWrapper background={'#eee'}>
-              <PageStyles.TextAlignCenterWrapper>
-                <PageStyles.FloatingImage right src={serverPath + n.cover.url}/>
-              </PageStyles.TextAlignCenterWrapper>
-            </PageStyles.BackgroundWrapper>
-            <PageStyles.TextBlock>
-              <ReactMarkdown source={n.content} />
-            </PageStyles.TextBlock>
-          </PageStyles.OverflowWrapper>
-          <PageStyles.InlineBreak />
-          {(index + 1) === displayData.news.length ? null : <PageStyles.Divider />}
-        </React.Fragment>)}
+        <PageStyles.FlexWrapper>
+
+          {displayData?.news.map( (n,index) => <React.Fragment key={index}>
+            
+            { index === 0 ? <>
+              <PageStyles.InlineBreak />
+                <FeatureArticle data={n} />
+              <PageStyles.InlineBreak />
+              <PageStyles.Divider />
+              <PageStyles.InlineBreak />
+            </> : <>
+              <SmallArticle data={n}/>
+              { (index % 4 === 0) ? <PageStyles.InlineBreak hideMobile/> : null}
+              <PageStyles.Break mobileOnly />
+            </> }
+          
+          </React.Fragment>)}
+
+        </PageStyles.FlexWrapper>
 
       </PageStyles.OverflowWrapper>
       
@@ -67,4 +113,4 @@ const About = () => {
   </>
 }
 
-export default About;
+export default News;

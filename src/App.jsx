@@ -10,6 +10,7 @@ import About from './pages/About';
 import Courses from './pages/Courses';
 import Organisations from './pages/Organisations';
 import News from './pages/News';
+import NewsArticle from './pages/NewsArticle';
 import Videos from './pages/Videos';
 import Blog from './pages/Blog';
 
@@ -40,6 +41,7 @@ const App = () => {
             <Route exact path="/courses" component={Courses}/>
             <Route exact path="/organisations" component={Organisations}/>
             <Route exact path="/news" component={News}/>
+            <Route exact path="/news/:id/:title" component={NewsArticle}/>
             <Route exact path="/videos" component={Videos}/>
             <Route exact path="/blog" component={Blog}/>
             <Content404 />

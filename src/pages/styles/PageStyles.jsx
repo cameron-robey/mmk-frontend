@@ -268,7 +268,9 @@ export const AspectRatioContainer = styled.div`
   padding-top: calc(100% * ${props => props.ratio});
 
   background-image: url(${props => props.url});
-  background-size: cover;
+  background-size: ${props => props.contain ? 'contain' : 'cover'};
+  background-repeat: no-repeat;
+  background-position: center; 
 `;
 
 export const Tag = styled.div`
