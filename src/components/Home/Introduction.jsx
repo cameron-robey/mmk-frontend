@@ -59,19 +59,24 @@ const Introduction = ({data, ...props}) => {
 
             <styles.SectionTitle>Latest news</styles.SectionTitle>
 
-            <PageStyles.FlexWrapper>
-
-            {displayData?.news?.slice(0,4).map( (n,index) => <React.Fragment key={index}>
-              { index === 0 ? <SmallArticle data={n}/> :
-              <PageStyles.HideMobileWrapper>
+            
+            <PageStyles.MobileOnlyWrapper>
+              {displayData?.news?.slice(0,1).map( (n,index) => <React.Fragment key={index}>
                 <SmallArticle data={n}/>
-                <PageStyles.Break mobileOnly /> 
-              </PageStyles.HideMobileWrapper>
-              }
-            </React.Fragment>
-            )}
+              </React.Fragment>
+              )}
+            </PageStyles.MobileOnlyWrapper>
 
-            </PageStyles.FlexWrapper>
+
+            <PageStyles.HideMobileWrapper>
+              <PageStyles.FlexWrapper>
+              {displayData?.news?.slice(0,4).map( (n,index) => <React.Fragment key={index}>
+                <SmallArticle data={n}/>
+              </React.Fragment>
+              )}
+              </PageStyles.FlexWrapper>
+            </PageStyles.HideMobileWrapper>
+
           
           </styles.IntroductionInformation>
         </styles.Introduction>
