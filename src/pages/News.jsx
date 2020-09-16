@@ -83,7 +83,7 @@ const News = () => {
 
     <PageStyles.Content>
       <PageStyles.OverflowWrapper>
-        <PageStyles.SectionTitle>Blog</PageStyles.SectionTitle>
+        <PageStyles.SectionTitle>News</PageStyles.SectionTitle>
         <PageStyles.Title>{displayData?.title}</PageStyles.Title>
 
         <PageStyles.FlexWrapper>
