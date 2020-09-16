@@ -35,9 +35,3 @@ export const Title = styled.h3`
 `;
 
 export const ImageWrapper = styled.div``;
-
-export const Image = styled.img`
-  height: 100px;
-  margin: 30px;
-  display: inline-block;
-`;

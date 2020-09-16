@@ -8,10 +8,12 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { serverPath } from './../api/config';
 import { useOrganisationsPage } from './../contexts/data/OrganisationsPageContext';
 import { useFooter } from '../contexts/data/FooterContext';
+import { useOrganisations } from '../contexts/data/OrganisationsContext';
 
 // Components
 import NavbarFiller from './../components/Helpers/NavbarFiller';
 import PageTitle from './../components/Helpers/PageTitle';
+import Slider from './../components/Organisations/Slider';
 
 // Styles
 import * as PageStyles from './styles/PageStyles';
@@ -19,16 +21,19 @@ import * as PageStyles from './styles/PageStyles';
 const About = () => {
   const organisationsPage = useOrganisationsPage();
   const footer = useFooter();
+  const organisations = useOrganisations();
 
   const [displayData, setDisplayData] = useState(undefined);
   const [footerData, setFooterData] = useState(undefined);
-
+  const [organisationsData, setOrganisationsData] = useState(undefined);
+  
   const [view, setView] = useState('');
 
   useEffect(() => {
     // Get data on page load
     organisationsPage.getData();
     footer.getData();
+    organisations.getData();
   }, []);
 
   useEffect(() => {
@@ -38,6 +43,10 @@ const About = () => {
   useEffect(() => {
     setFooterData(footer.data);
   }, [footer.data]);
+
+  useEffect(() => {
+    setOrganisationsData(organisations.data);
+  }, [organisations.data]);
 
   if (!displayData || Object.keys(displayData).length === 0) return <>
     <PageTitle title={'Organisations'} />
@@ -162,7 +171,13 @@ const About = () => {
       </PageStyles.OverflowWrapper>
       
       <PageStyles.Break />
+
+      <PageStyles.OverflowWrapper noWrap>
+        <Slider data={organisationsData} />
+      </PageStyles.OverflowWrapper>    
       
+      <PageStyles.Break />
+
     </PageStyles.Content>
     
   </>

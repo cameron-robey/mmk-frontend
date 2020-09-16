@@ -100,6 +100,8 @@ export const Break = styled.div`
 
 export const OverflowWrapper = styled.div`
   overflow: hidden;
+  
+  ${props => props.noWrap ? 'white-space: nowrap;' : ''}
 `;
 
 export const FlexWrapper = styled.div`
