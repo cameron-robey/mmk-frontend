@@ -31,9 +31,7 @@ const NewsArticle = () => {
     setDisplayData(news.data);
 
     if (news?.data?.news?.length > 0) {
-      console.log(news.data.news, urlProps.params.id)
       setArticle(news.data.news.filter(a => String(a.id) === String(urlProps.params.id))[0]);
-      console.log(news.data.news.filter(a => String(a.id) === String(urlProps.params.id)));
     }
   }, [news.data]);
 

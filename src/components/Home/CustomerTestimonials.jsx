@@ -13,7 +13,6 @@ const CustomerTestimonials = ({data, ...props}) => {
   const [displayData, setDisplayData] = useState(undefined);
   useEffect(() => {
     setDisplayData(data);
-    console.log(data);
   }, [data]);
 
 
