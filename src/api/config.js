@@ -1,2 +1,2 @@
-export const serverPath = 'https://newadmin.mmkarim.com';
+export const serverPath = 'https://admin.mmkarim.com';
 
