@@ -110,34 +110,64 @@ const About = () => {
         
       { view === 'schools' ? 
         <PageStyles.OverflowWrapper>
+
           <PageStyles.SectionTitle>Schools</PageStyles.SectionTitle>
           <PageStyles.Title>{displayData?.schools?.title}</PageStyles.Title>
+
+          <PageStyles.InlineBlockWrapper right>
+            <PageStyles.BackgroundWrapper background={'#eee'}>
+              <PageStyles.PaddingWrapper value={'5px'}>
+                <PageStyles.AspectRatioContainer ratio={0.66} contain url={serverPath + displayData?.schools?.image.url} />
+              </PageStyles.PaddingWrapper>
+            </PageStyles.BackgroundWrapper>
+          </PageStyles.InlineBlockWrapper>
 
           <PageStyles.TextBlock>
             <ReactMarkdown source={displayData?.schools?.content} />
           </PageStyles.TextBlock>
+
         </PageStyles.OverflowWrapper>
       : null }
 
       { view === 'charities' ? 
         <PageStyles.OverflowWrapper>
+
           <PageStyles.SectionTitle>Charities</PageStyles.SectionTitle>
           <PageStyles.Title>{displayData?.charities?.title}</PageStyles.Title>
+
+          <PageStyles.InlineBlockWrapper right>
+            <PageStyles.BackgroundWrapper background={'#eee'}>
+              <PageStyles.PaddingWrapper value={'5px'}>
+                <PageStyles.AspectRatioContainer ratio={0.66} contain url={serverPath + displayData?.charities?.image.url} />
+              </PageStyles.PaddingWrapper>
+            </PageStyles.BackgroundWrapper>
+          </PageStyles.InlineBlockWrapper>
 
           <PageStyles.TextBlock>
             <ReactMarkdown source={displayData?.charities?.content} />
           </PageStyles.TextBlock>
+
         </PageStyles.OverflowWrapper>
       : null }
 
       { view === 'businesses' ? 
         <PageStyles.OverflowWrapper>
+
           <PageStyles.SectionTitle>Businesses</PageStyles.SectionTitle>
           <PageStyles.Title>{displayData?.businesses?.title}</PageStyles.Title>
+
+          <PageStyles.InlineBlockWrapper right>
+            <PageStyles.BackgroundWrapper background={'#eee'}>
+              <PageStyles.PaddingWrapper value={'5px'}>
+                <PageStyles.AspectRatioContainer ratio={0.66} contain url={serverPath + displayData?.businesses?.image.url} />
+              </PageStyles.PaddingWrapper>
+            </PageStyles.BackgroundWrapper>
+          </PageStyles.InlineBlockWrapper>
 
           <PageStyles.TextBlock>
             <ReactMarkdown source={displayData?.businesses?.content} />
           </PageStyles.TextBlock>
+
         </PageStyles.OverflowWrapper>
       : null }
 
