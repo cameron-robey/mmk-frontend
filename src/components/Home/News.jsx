@@ -5,7 +5,7 @@ import ReactMarkdown from 'react-markdown';
 import { serverPath } from './../../api/config';
 
 // Styles
-import * as styles from './styles/IntroductionStyles';
+import * as styles from './styles/NewsStyles';
 import * as PageStyles from './../../pages/styles/PageStyles';
 
 
@@ -34,7 +34,7 @@ const SmallArticle = ({data, ...props}) => {
   </>
 }
 
-const Introduction = ({data, ...props}) => {
+const News = ({data, ...props}) => {
   const [displayData, setDisplayData] = useState(undefined);
   useEffect(() => {
     setDisplayData(data);
@@ -45,20 +45,37 @@ const Introduction = ({data, ...props}) => {
 
   return <>
     <styles.MainWrapper>
-      <styles.IntroductionWrapper>
+      <styles.NewsWrapper>
 
-        <styles.SectionTitle>Introduction</styles.SectionTitle>
+        <PageStyles.SectionTitle>Latest news</PageStyles.SectionTitle>
+        <PageStyles.Title>Latest news from MMK Public Speaking</PageStyles.Title>
 
-        <styles.Introduction>
+        <styles.News>
           <styles.IntroductionInformation>
-            <styles.Title>{displayData?.introduction_title}</styles.Title>
-            <styles.IntroductionText><ReactMarkdown source={displayData?.introduction_text}/></styles.IntroductionText>
-            <styles.IntroductionContactButton onClick={() => window.scrollTo({top: document.body.scrollHeight, left: 0, behavior: 'smooth'})}>Get in touch</styles.IntroductionContactButton>          
+            
+            <PageStyles.MobileOnlyWrapper>
+              {displayData?.news?.slice(0,1).map( (n,index) => <React.Fragment key={index}>
+                <SmallArticle data={n}/>
+              </React.Fragment>
+              )}
+            </PageStyles.MobileOnlyWrapper>
+
+
+            <PageStyles.HideMobileWrapper>
+              <PageStyles.FlexWrapper>
+              {displayData?.news?.slice(0,4).map( (n,index) => <React.Fragment key={index}>
+                <SmallArticle data={n}/>
+              </React.Fragment>
+              )}
+              </PageStyles.FlexWrapper>
+            </PageStyles.HideMobileWrapper>
+
+          
           </styles.IntroductionInformation>
-        </styles.Introduction>
-      </styles.IntroductionWrapper>
+        </styles.News>
+      </styles.NewsWrapper>
     </styles.MainWrapper>
   </>
 }
 
-export default Introduction;
+export default News;
