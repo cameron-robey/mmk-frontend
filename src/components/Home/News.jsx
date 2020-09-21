@@ -48,7 +48,7 @@ const News = ({data, ...props}) => {
       <styles.NewsWrapper>
 
         <PageStyles.SectionTitle>Latest news</PageStyles.SectionTitle>
-        <PageStyles.Title>Latest news from MMK Public Speaking</PageStyles.Title>
+        <PageStyles.Title>{displayData?.title}</PageStyles.Title>
 
         <styles.News>
           <styles.IntroductionInformation>

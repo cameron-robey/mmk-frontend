@@ -81,7 +81,8 @@ const Homepage = () => {
     }} />
 
     <News data={{
-      news: displayDataNews?.news
+      news: displayDataNews?.news,
+      title: displayDataNews?.title
     }} />
 
     <CustomerTestimonials data={{
