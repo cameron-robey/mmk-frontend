@@ -94,7 +94,7 @@ const Footer = ({data, ...props}) => {
           <styles.ContentSection width={'60%'} padding={true}>
             <styles.SectionTitle>Copyright</styles.SectionTitle>
 
-            <styles.Type>&copy; Copyright {new Date().getFullYear()} MMK Public Speaking</styles.Type>
+            <styles.Type>&copy; Copyright {new Date().getFullYear()} MMK Academy</styles.Type>
           </styles.ContentSection>
           
             <styles.FooterDivider onlyMobile />
