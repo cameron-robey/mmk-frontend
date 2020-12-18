@@ -19,6 +19,7 @@ const Header = ({data, ...props}) => {
 
   return <>
     <styles.Header backgroundUrl={serverPath + displayData.header_background?.url} >
+      <styles.BackgroundImage backgroundUrl={serverPath + displayData.header_background?.url} />
       <styles.Content>
         <styles.Logo src={ serverPath + displayData.header_logo?.formats.medium.url } alt="" />
         <styles.Title>{ displayData.header_title }</styles.Title>
