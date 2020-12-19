@@ -5,7 +5,7 @@ import {Helmet} from "react-helmet";
 const PageTitle = ({title, ...rest}) => {
   return <>
     <Helmet>
-      <title>{`${title ? `${title} - ` : `` }MMK Public Speaking`}</title>
+      <title>{`${title ? `${title} - ` : `` }MMK Academy`}</title>
     </Helmet>
   </>
 }
