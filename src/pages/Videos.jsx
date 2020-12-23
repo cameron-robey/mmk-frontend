@@ -82,7 +82,7 @@ const Videos = () => {
         
 
         <PageStyles.Break />
-        {(index + 1 === c.videos.length) ? null : <><PageStyles.Divider /><PageStyles.Break /></>}
+        {((index + 1) === displayData.categories.length) ? null : <><PageStyles.Divider /><PageStyles.Break /></>}
 
       </React.Fragment>)}
 
