@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import ReactMarkdown from 'react-markdown';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faQuoteLeft } from '@fortawesome/fontawesome-free-solid';
+import { faQuoteLeft } from '@fortawesome/free-solid-svg-icons';
 
 // Contexts
 import { serverPath } from '../../api/config';

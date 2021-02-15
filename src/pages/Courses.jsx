@@ -1,7 +1,7 @@
 // Modules
 import React, { useState, useEffect } from 'react';
 import ReactMarkdown from 'react-markdown';
-import { faEnvelope, faPhone } from '@fortawesome/fontawesome-free-solid';
+import { faEnvelope, faPhone } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 // Contexts

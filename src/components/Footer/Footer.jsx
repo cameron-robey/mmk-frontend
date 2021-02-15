@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faYoutube, faLinkedin, faInstagram, faTwitter } from '@fortawesome/free-brands-svg-icons';
-import { faEnvelope, faPhone } from '@fortawesome/fontawesome-free-solid';
+import { faEnvelope, faPhone } from '@fortawesome/free-solid-svg-icons';
 
 // Contexts
 import { serverPath } from '../../api/config';

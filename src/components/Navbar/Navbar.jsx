@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faYoutube, faLinkedin, faInstagram, faTwitter } from '@fortawesome/free-brands-svg-icons';
-import { faEnvelope } from '@fortawesome/fontawesome-free-solid';
+import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import { useLocation } from 'react-router-dom';
 
 // Contexts

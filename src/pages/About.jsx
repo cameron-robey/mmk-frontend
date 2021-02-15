@@ -42,7 +42,7 @@ const About = () => {
         <PageStyles.Title>{displayData?.company_subtitle}</PageStyles.Title>
 
         <PageStyles.TextBlock>
-          <PageStyles.InlineImage left src={serverPath + displayData?.company_image?.formats.small.url}/>
+          <PageStyles.InlineImage left src={serverPath + displayData?.company_image?.url}/>
           <ReactMarkdown source={displayData?.company_text} />
         </PageStyles.TextBlock>
       </PageStyles.OverflowWrapper>
@@ -53,7 +53,7 @@ const About = () => {
       <PageStyles.Title>{displayData?.founder_subtitle}</PageStyles.Title>
 
       <PageStyles.TextBlock>
-        <PageStyles.InlineImage right src={serverPath + displayData?.founder_image?.formats.small.url}/>
+        <PageStyles.InlineImage right src={serverPath + displayData?.founder_image?.url}/>
         <ReactMarkdown source={displayData?.founder_text} />
       </PageStyles.TextBlock>
       </PageStyles.OverflowWrapper>
