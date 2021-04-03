@@ -48,7 +48,7 @@ const SmallArticle = ({data, ...props}) => {
         </PageStyles.UnstyledLink>
           <PageStyles.MobileOnlyWrapper>
             <PageStyles.Description>
-              {data.content.substring(0,200).split(' ').slice(0, -1).join(' ')}...
+              <ReactMarkdown source={data.content.replace(/\#/g, '').substring(0,200).split(' ').slice(0, -1).join(' ') + "..."} />
             </PageStyles.Description>
             <PageStyles.AccentButtonLink to={`/news/${data.id}/${data.title.replace(/[^\w\s]/gi, '').toLowerCase().replace(/\s/g,'-')}`}>Read more</PageStyles.AccentButtonLink>      
           </PageStyles.MobileOnlyWrapper>
